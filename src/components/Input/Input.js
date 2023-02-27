@@ -8,4 +8,4 @@ const Input =(props)=>{
         {props.children}
         </React.Fragment>
     )}
-export default Input
+export default Input;
