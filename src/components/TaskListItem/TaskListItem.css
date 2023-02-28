@@ -8,6 +8,10 @@
     color:#552200;
 }
 
+.true{
+    text-decoration: line-through;
+}
+
 .container-buttons{
     width: 200px;
     margin: 13px 0;

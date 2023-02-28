@@ -26,3 +26,7 @@
 .icons-button-task:hover{
     background: linear-gradient(77.04deg, #ae4f4f 15.12%, #a05353 22.65%);
 }
+
+.true{
+    text-decoration: underline red;
+}
