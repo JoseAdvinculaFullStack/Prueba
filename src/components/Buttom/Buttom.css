@@ -1,4 +1,4 @@
-.icons-button{
+.icons-button-icon{
     border-radius: 100%;
     background: linear-gradient(77.04deg, #AC2828 15.12%, #A02C2C 22.65%);
     border: none;
@@ -6,6 +6,16 @@
     height: 28px;
 }
 
-.icons-button img{
+.icons-button-icon img{
     margin-top: 3px;
+}
+
+.icons-button-task{
+    border-radius: 15px;
+    background: linear-gradient(77.04deg, #AC2828 15.12%, #A02C2C 22.65%);
+    border: none;
+    width:100px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
 }

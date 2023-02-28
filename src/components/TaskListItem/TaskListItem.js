@@ -15,8 +15,8 @@ const TaskListItem=()=>{
        <React.Fragment>
             <BodyItem></BodyItem>
             <div className='container-buttons'>
-            <Buttom image={Checkmark}></Buttom>
-            <Buttom image={Checkcancel}></Buttom>
+            <Buttom image={Checkmark} name="icon"></Buttom>
+            <Buttom image={Checkcancel} name="icon"></Buttom>
             </div>
 
        </React.Fragment>

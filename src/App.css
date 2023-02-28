@@ -1,4 +1,16 @@
 *{
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Pangolin';
+}
+
+body{
+  background: url('../src/images/Rectangle\ 3.svg');
+  background-repeat: no-repeat;
+}
+
+.App{
+  display: flex;
+  justify-content: start;
+  margin-top: 30px;
 }
