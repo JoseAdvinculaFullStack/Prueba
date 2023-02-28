@@ -13,7 +13,6 @@
     height: 30px;
     font-size: 20px;
     width: 200px;
-    z-index: 90000;
 }
 .container-input-tasklist::placeholder{
     font-family:'Pangolin' ;

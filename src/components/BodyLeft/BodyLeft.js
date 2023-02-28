@@ -12,7 +12,7 @@ const BodyLeft=()=>{
             <div className='container-add-task'>
                 <h3>Task Name</h3>
                 <div className='input-container-body-left'>
-                    <Input text="Write your task" name="tasklist"></Input>
+                    <Input text="Write your task" name="tasklist" do="add"></Input>
                 </div>
                 <Buttom image={null} name="task">
                     <p>Add Task</p>

@@ -3,22 +3,22 @@ import './TaskListItem.css'
 import Buttom from '../Buttom/Buttom'
 import Checkmark from '../../images/Checkmark.svg'
 import Checkcancel from '../../images/matt-icons_cancel.svg'
-const BodyItem=()=>{
+const BodyItem=(props)=>{
     return(
         <div className='container-list-item'>
-            Comer Alitas
+             {props.text} 
         </div>
     )
 }
-const TaskListItem=()=>{
+const TaskListItem=(props)=>{
     return (   
        <React.Fragment>
-            <BodyItem></BodyItem>
+            <BodyItem text={props.text}></BodyItem>
             <div className='container-buttons'>
-            <Buttom image={Checkmark} name="icon"></Buttom>
-            <Buttom image={Checkcancel} name="icon"></Buttom>
+            <Buttom image={Checkmark} name="icon" do="checkmark" completed={props.completed} onComplete={props.onComplete}></Buttom>
+            <Buttom image={Checkcancel} name="icon" do ="checkcancel"  completed={props.completed} onComplete={props.onComplete}></Buttom>
             </div>
-
+ 
        </React.Fragment>
     )
 }
