@@ -14,10 +14,9 @@ const Input =(props)=>{
 
         {props.do==="add" 
         ? <input placeholder={props.text} className={`container-input${"-"+props.name}`}/>
-        : <input placeholder={props.text} className={`container-input${"-"+props.name}`}  onChange={onSearchValueChange} value={props.searchValue}/>
+        : <input placeholder={props.text} className={`container-input${"-"+props.name}`}  onChange={onSearchValueChange}/>
         }
        
-        {props.children}
         </React.Fragment>
     )}
 export default Input;

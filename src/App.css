@@ -11,6 +11,6 @@ body{
 
 .App{
   display: flex;
-  justify-content: start;
+  flex: start;
   margin-top: 30px;
 }

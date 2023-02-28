@@ -34,13 +34,20 @@ const TaskListContainer=()=>{
         setTodos(newTodos);
     };
 
+    const deleteTodos=(text)=>{
+        const todoIndex = todos.findIndex(todo=>todo.text===text);
+        const newTodos=[...todos];
+        newTodos.splice(todoIndex,1);
+        setTodos(newTodos);
+    };
+
     return (
         <div className='task-list-container'>
             <h2>TASK LIST</h2>
             <TaskCount completedTodos={completedTodos} totalTodos={totalTodos}></TaskCount>
             <Search searchValue={searchValue} setSearchValue={setSearchValue}></Search>
             {searchTodos.map((item,index) =>(
-                <TaskListItem key={index} text={item.text} completed={item.completed} onComplete={()=>completeTodos(item.text)}></TaskListItem>
+                <TaskListItem key={index} text={item.text} completed={item.completed} onComplete={()=>completeTodos(item.text)} onDelete={()=>deleteTodos(item.text)}></TaskListItem>
             ))}
         </div>
     )

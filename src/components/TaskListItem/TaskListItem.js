@@ -22,7 +22,7 @@ const TaskListItem=(props)=>{
             <BodyItem text={props.text} completed={props.completed}></BodyItem>
             <div className='container-buttons'>
             <Buttom image={Checkmark} name="icon" do="checkmark" completed={props.completed} onComplete={props.onComplete}></Buttom>
-            <Buttom image={Checkcancel} name="icon" do ="checkcancel"  completed={props.completed} onComplete={props.onComplete}></Buttom>
+            <Buttom image={Checkcancel} name="icon" do ="checkcancel"  completed={props.completed} onDelete={props.onDelete}></Buttom>
             </div>
  
        </React.Fragment>
