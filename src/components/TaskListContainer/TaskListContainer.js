@@ -4,16 +4,44 @@ import { useState } from 'react'
 import './TaskListContainer.css'
 import TaskCount from '../TaskCount/TaskCount'
 
-const defaultTodos=[
-    {text:'Cortar cebolla', completed:false},
-    {text:'Intro a React',completed:false},
-    {text:'Llorar con la llorona',completed:false},
-    {text:'LALALALALA',completed:false}   
-]
+  const defaultTodos=[
+      {text:'Cortar cebolla', completed:false},
+      {text:'Intro a React',completed:false},
+      {text:'Llorar con la llorona',completed:false},
+      {text:'LALALALALA',completed:false}   
+  ]
  
+function useLocalStorage(itemName,initialValue){
+    
+    const localStorageItem= localStorage.getItem(itemName);
+    let parseItem;
+    if(!localStorageItem){
+        localStorage.setItem(itemName, JSON.stringify(initialValue))
+        parseItem=[];
+    }else{
+        parseItem=JSON.parse(localStorageItem)
+    }
+    const [item,setItem]=useState(parseItem);
+    const saveItem=(newItem) =>{
+        const stringifiedItem=JSON.stringify(newItem);
+        localStorage.setItem(itemName, stringifiedItem)
+        setItem(newItem)
+    }
+
+    return [
+        item,
+        saveItem
+    ];
+    
+}
+
+
 const TaskListContainer=()=>{
+    
+    const [todos,saveTodos] = useLocalStorage('PANA_V2',[]);
+
     const [searchValue,setSearchValue]=useState('');
-    const [todos,setTodos]=useState(defaultTodos);
+    
     const completedTodos=(todos.filter(todo=>!!todo.completed)).length;
     const totalTodos=todos.length;
     let searchTodos=[];
@@ -27,18 +55,20 @@ const TaskListContainer=()=>{
         })
     }
 
+    
+
     const completeTodos=(text)=>{
         const todoIndex = todos.findIndex(todo=>todo.text===text);
         const newTodos=[...todos];
         newTodos[todoIndex].completed=true;
-        setTodos(newTodos);
+        saveTodos(newTodos);
     };
 
     const deleteTodos=(text)=>{
         const todoIndex = todos.findIndex(todo=>todo.text===text);
         const newTodos=[...todos];
         newTodos.splice(todoIndex,1);
-        setTodos(newTodos);
+        saveTodos(newTodos);
     };
 
     return (
